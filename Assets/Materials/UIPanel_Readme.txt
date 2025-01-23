@@ -1,0 +1,3 @@
+Originally, there was render "z-fighting" between the BG panel and the text/buttons. This was because they were both set to a transparent material/shader and had the same priority for rendering. Unity did NOT use the z-position to determine priority, instead the priority is set in the shader.
+
+To fix this, we created a new material (with UI/Default) that has the Render Queue for the shader set to 2999, which gives it a slight priority over anything else with a transparent shader.
